@@ -14,30 +14,26 @@ CORS issues and keeps your tokens out of the front-end.
 
 ## Screenshot
 
-```text
-Greenhouse
-  🌡  Temperature        23.4°C
-  💧  Humidity              48%
-Garage
-  🚪  Door                 Open
-```
-
-*(Add your own `example.png` and reference it here once it's running.)*
+![Screenshot](images/example.png)
 
 ## Installation
-
-### Install
 
 Clone (or copy) this folder into your MagicMirror `modules` directory. The folder **must** be
 named `MMM-Blynk`:
 
 ```bash
 cd ~/MagicMirror/modules
-git clone <your-repo-url> MMM-Blynk
+git clone kritch83/MMM-Blynk
 ```
 
 No runtime dependencies are required (the module uses Node's built-in `fetch`, available in
 Node 18+, which MagicMirror already requires).
+
+## Developer commands
+
+- `npm install` — install devDependencies (ESLint).
+- `npm run lint` — run lint / formatter checks.
+- `npm run lint:fix` — auto-fix lint / formatting issues.
 
 ### Update
 
@@ -69,11 +65,11 @@ Add a configuration block to the `modules` array in `config/config.js`.
   header: "Blynk",
   config: {
     server: "blynk.cloud",
-    updateInterval: 60 * 1000,
+    updateInterval: 60 * 1000,  // seconds
     devices: [
       {
-        name: "Greenhouse",
-        token: "YourDeviceAuthToken",
+        name: "Greenhouse", // name of device for header, doesn't need to match blynk.cloud name
+        token: "YourDeviceAuthToken",  // auth token of device
         pins: [
           { pin: "V0", label: "Temperature", unit: "°C", decimals: 1, icon: "fa-temperature-half" },
           { pin: "V1", label: "Humidity", unit: "%", decimals: 0, icon: "fa-droplet" }
@@ -165,17 +161,3 @@ handy for a small or center region. Each slide shows for `rotateInterval` ms and
 - A failing device (bad token, network error) shows an inline error and does not blank the others.
 - Keep `updateInterval` reasonable (the default 60s is plenty for a wall display) to stay within
   Blynk's HTTP API rate limits.
-
-## Developer commands
-
-- `npm install` — install devDependencies (ESLint).
-- `npm run lint` — run lint / formatter checks.
-- `npm run lint:fix` — auto-fix lint / formatting issues.
-
-## License
-
-MIT — see [LICENSE.md](LICENSE.md).
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md).
