@@ -1,0 +1,38 @@
+{
+  "name": "mmm-blynk",
+  "version": "1.0.0",
+  "description": "A MagicMirror² module that displays Blynk IoT virtual pin (datastream) values from one or more devices.",
+  "main": "MMM-Blynk.js",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "node --run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/MMM-Blynk.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "MagicMirror2",
+    "MMM",
+    "Blynk",
+    "IoT",
+    "datastream",
+    "virtual-pin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourname/MMM-Blynk/issues"
+  },
+  "homepage": "https://github.com/yourname/MMM-Blynk#readme",
+  "devDependencies": {
+    "@eslint/css": "^0.9.0",
+    "@eslint/js": "^9.30.1",
+    "@eslint/markdown": "^6.6.0",
+    "@stylistic/eslint-plugin": "^5.1.0",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0"
+  }
+}
